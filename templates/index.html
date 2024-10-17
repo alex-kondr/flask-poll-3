@@ -1,0 +1,13 @@
+{% extends "_base.html" %}
+
+{% block content %}
+    <form action="{{ url_for('add_vote') }}">
+        <h3>{{ question }}</h3>
+        {% for field in fields %}
+        <p>
+            <input type="radio" name="vote" value="{{ field }}">{{ field }}
+        </p>
+        {% endfor %}
+        <input type="submit">
+    </form>
+{% endblock content %}
